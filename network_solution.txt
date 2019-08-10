@@ -1,0 +1,13 @@
+The issue can be due to the fact that DNS is not configured. So to configure DNS:
+
+1) Execute sudo gedit /usr/lib/systemd/resolv.conf and paste "nameserver 8.8.8.8" [without quotes] (8.8.4.4 will also work). Save and exit
+
+Now create a symlink as follows:-
+
+2) sudo ln -sf /usr/lib/systemd/resolv.conf /etc/resolv.conf
+
+Restart the network manager
+
+3) sudo service network-manager restart
+
+Your internet should be able to start
